@@ -25,9 +25,11 @@
 #
 # Crypto nerds know where we're going with this. Bear with us.
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.text import unpad_pkcs7
 

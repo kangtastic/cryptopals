@@ -13,10 +13,12 @@
 #   involved breaking an H(k, m) MAC with SHA1. Which meant that SHA1 code
 #   was floating all over the Internet. MD4 code, not so much.
 #
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.md4 import MD4
 

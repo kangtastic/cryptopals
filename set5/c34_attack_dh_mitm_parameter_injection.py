@@ -50,10 +50,12 @@
 # parameters to do a generic MITM attack. But do the parameter injection
 # attack; it's going to come up again.
 #
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import aes_cbc_decrypt, aes_cbc_encrypt
 from util.dh import G, P, dh_make_public_key, dh_make_session_key

@@ -39,6 +39,8 @@
 #   attacking real-world timing leaks, you have to start writing low-level
 #   timing code. We're keeping things cryptographic in these challenges.
 #
+import inspect
+import os
 import random
 import sys
 import time
@@ -48,7 +50,7 @@ from itertools import zip_longest
 from socketserver import ThreadingMixIn
 from threading import Thread
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.hmac import hmac_sha1
 

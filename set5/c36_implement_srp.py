@@ -49,13 +49,15 @@
 # the public keys. The server also takes an extra step to avoid storing an
 # easily crackable password-equivalent.
 #
+import inspect
+import os
 import random
 import sys
 from hashlib import sha256
 from socketserver import ThreadingTCPServer
 from threading import Thread
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.dh import P
 from util.hmac import hmac_sha256

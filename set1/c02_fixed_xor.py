@@ -18,7 +18,11 @@
 #
 #   746865206b696420646f6e277420706c6179
 #
+import inspect
+import os
+import sys
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 def fixed_xor(hs1, hs2):
     hs1, hs2 = bytes.fromhex(hs1), bytes.fromhex(hs2)

@@ -64,9 +64,11 @@
 # Forge a 1024-bit RSA signature for the string "hi mom". Make sure your
 # implementation actually accepts the signature!
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import nth_root
 from util.rsa import make_rsa_keys, rsa

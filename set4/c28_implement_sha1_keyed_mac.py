@@ -20,10 +20,12 @@
 # you've produced, and that you can't produce a new MAC without knowing the
 # secret key.
 #
+import inspect
+import os
 import sys
 from hashlib import sha1
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.sha1 import SHA1
 

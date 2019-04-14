@@ -11,10 +11,12 @@
 #   http://cryptopals.com/sets/2/challenges/16
 #
 # to use CTR mode instead of CBC mode. Inject an "admin=true" token.
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import aes_ctr, make_aes_key
 

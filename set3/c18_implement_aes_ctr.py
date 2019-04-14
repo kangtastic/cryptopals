@@ -58,9 +58,11 @@
 #   transforms. Constructions like CTR are what he was talking about.
 #
 import base64
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import aes_ctr
 

@@ -9,9 +9,11 @@
 # already giving you MT19937 as "rand()"; _don't use rand()_. Write the RNG
 # yourself.
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.mt19937 import MT19337
 

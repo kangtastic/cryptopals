@@ -19,11 +19,13 @@
 #   implementation of SRP we've ever seen has this flaw; if you see a new one,
 #   go look for this bug.
 #
+import inspect
+import os
 import sys
 from hashlib import sha256
 from threading import Thread
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from set5.c36_implement_srp import Carol, Steve
 

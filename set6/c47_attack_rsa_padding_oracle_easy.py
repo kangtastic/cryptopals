@@ -66,9 +66,11 @@
 # We recommend you just use the raw math from paper (check, check, double
 # check your translation to code) and not spend too much time trying to grok
 # how the math works.
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import invmod, modexp
 from util.rsa import make_rsa_keys, rsa

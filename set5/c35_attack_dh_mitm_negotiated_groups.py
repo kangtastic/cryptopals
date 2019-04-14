@@ -31,10 +31,12 @@
 #   a static DH group. But the same construction exists in Elliptic Curve
 #   Diffie-Hellman, and this becomes more relevant there.
 #
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from set5.c34_attack_dh_mitm_parameter_injection import Host
 from util.aes import aes_cbc_decrypt

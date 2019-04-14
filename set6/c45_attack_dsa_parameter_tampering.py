@@ -28,10 +28,12 @@
 #
 # Sign "Hello, world". And "Goodbye, world".
 #
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.dsa import G, P, Q, make_dsa_keys
 from util.misc import invmod, modexp

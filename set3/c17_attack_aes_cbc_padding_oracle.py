@@ -64,10 +64,12 @@
 # padded or not.
 #
 import base64
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import aes_cbc_decrypt, aes_cbc_encrypt, make_aes_key
 from util.text import unpad_pkcs7

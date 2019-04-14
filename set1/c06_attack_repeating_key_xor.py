@@ -61,10 +61,12 @@
 #   other ones. We promise, there aren't any blatant errors in this text.
 #   In particular: the "wokka wokka!!!" edit distance really is 37.
 #
+import inspect
+import os
 import sys
 from itertools import zip_longest
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.loader import loader
 from util.text import englishness, repeating_key_xor, single_byte_xor

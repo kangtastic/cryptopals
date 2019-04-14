@@ -44,13 +44,15 @@
 # algebra! Make your teenage son do it for you! *Note: does not work well in
 # practice*
 #
+import inspect
+import os
 import random
 import signal
 import sys
 from datetime import datetime
 from multiprocessing import Pool
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import cpu_threads, invmod, modexp
 from util.rsa import make_rsa_keys, rsa
@@ -119,7 +121,7 @@ class PKCS15Cracker:
         iters = min(self.i, self.bits) if self.result is None else self.bits
         pct = iters * 100 // self.bits
         bar = (char * (iters * width // self.bits)).ljust(width)
-        print(f"\r[{bar}] {pct}%", end="", flush=True)
+        print(f"\r[{bar}] {pct}% ", end="", flush=True)
 
     def decrypt(self):
         while self.result is None:

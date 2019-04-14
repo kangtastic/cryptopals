@@ -38,11 +38,13 @@
 #   is that I think this approach is suboptimal.
 #
 import base64
+import inspect
+import os
 import sys
 from functools import partial
 from itertools import zip_longest
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import aes_ctr, make_aes_key
 from util.text import single_byte_xor, repeating_key_xor

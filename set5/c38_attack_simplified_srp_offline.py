@@ -32,12 +32,14 @@
 #
 # Crack the password from A's HMAC-SHA256(K, salt).
 #
+import inspect
+import os
 import random
 import sys
 from hashlib import sha256
 from threading import Thread
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.hmac import hmac_sha256
 from util.misc import modexp

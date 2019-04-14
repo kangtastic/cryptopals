@@ -17,9 +17,11 @@
 # deterministic; the same 16 byte plaintext block will always produce the
 # same 16-byte ciphertext.
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import is_aes_ecb
 from util.loader import loader

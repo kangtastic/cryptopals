@@ -54,6 +54,8 @@
 #   Remember: you don't simply divide mod N; you multiply by the
 #   multiplicative inverse mod N. So you'll need a modinv() function.
 #
+import inspect
+import os
 import random
 import sys
 import time
@@ -62,7 +64,7 @@ from hashlib import sha256
 from socketserver import ThreadingTCPServer
 from threading import Thread
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import invmod, modexp
 from util.net import ClientMixIn, Handler

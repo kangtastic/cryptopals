@@ -38,10 +38,12 @@
 # To decrypt RSA using a simple cube root, leave off the final modulus
 # operation; just take the raw accumulated result and cube-root it.
 #
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import invmod, nth_root
 from util.rsa import make_rsa_keys, rsa

@@ -19,11 +19,13 @@
 #
 # From the 32 bit RNG output, discover the seed.
 #
+import inspect
+import os
 import random
 import sys
 import time
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.mt19937 import MT19337
 

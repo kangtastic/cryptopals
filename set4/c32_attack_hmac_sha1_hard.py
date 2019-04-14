@@ -7,11 +7,13 @@
 # breaks. (Try 5ms to start.)
 #
 # Now break it again.
+import inspect
+import os
 import sys
 import time
 from http.client import HTTPConnection
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 import set4.c31_attack_hmac_sha1_easy as easy
 

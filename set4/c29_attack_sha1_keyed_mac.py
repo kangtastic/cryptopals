@@ -53,10 +53,12 @@
 #   For instance: Thai Duong and Juliano Rizzo, who got to this attack before
 #   we did, used it to break the Flickr API.
 #
+import inspect
+import os
 import random
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from set4.c28_implement_sha1_keyed_mac import check_sha1_pmac, make_sha1_pmac
 from util.sha1 import SHA1

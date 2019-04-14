@@ -50,10 +50,12 @@
 #
 #   ca8f6f7c66fa362d40760d135b763eb8527d3d52
 #
+import inspect
+import os
 import sys
 from itertools import combinations
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.dsa import G, P, Q
 from util.loader import loader

@@ -27,11 +27,13 @@
 #   need to be able to do is generate byte N of the keystream. Imagine if
 #   you'd relied on that advice to, say, encrypt a disk.
 #
+import inspect
+import os
 import signal
 import sys
 from multiprocessing import Pool
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.aes import aes_ctr, aes_ecb_decrypt, make_aes_key
 from util.misc import cpu_threads

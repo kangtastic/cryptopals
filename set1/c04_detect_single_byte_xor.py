@@ -13,9 +13,11 @@
 #
 # (Your code from #3 should help.)
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.loader import loader
 from util.text import englishness, single_byte_xor

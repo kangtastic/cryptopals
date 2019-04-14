@@ -33,10 +33,12 @@
 #   How would you modify MT19937 to make this attack hard? What would happen
 #   if you subjected each tempered output to a cryptographic hash?
 #
-import random
+import inspect
+import os
 import sys
+import random
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.mt19937 import MT19337
 

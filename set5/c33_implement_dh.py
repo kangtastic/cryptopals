@@ -45,11 +45,13 @@
 # the 1024-bit-numberth power. You can find modexp routines on Rosetta Code
 # for most languages.
 #
+import inspect
+import os
 import random
 import sys
 import textwrap
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.dh import dh_make_public_key, dh_make_session_key
 

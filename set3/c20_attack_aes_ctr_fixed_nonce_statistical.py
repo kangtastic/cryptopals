@@ -22,9 +22,11 @@
 # Solve the resulting concatenation of ciphertexts as if for repeating-key XOR,
 # with a key size of the length of the ciphertext you XOR'd.
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from set3.c19_attack_aes_ctr_fixed_nonce_substitution import guess_keystream
 from util.aes import aes_ctr, make_aes_key

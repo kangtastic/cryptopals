@@ -36,11 +36,13 @@
 # to hex and put "0x" on the front of it to turn it into a number. The math
 # cares not how stupidly you feed it strings.
 #
+import inspect
+import os
 import sys
 
 from Crypto.Util.number import isPrime
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import get_prime, invmod
 from util.rsa import make_rsa_keys, rsa

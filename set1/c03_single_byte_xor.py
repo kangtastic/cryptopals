@@ -17,9 +17,11 @@
 # Character frequency is a good metric. Evaluate each output and choose the
 # one with the best score.
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.text import single_byte_xor
 

@@ -22,11 +22,13 @@
 # Write a function to check if any given password token is actually the
 # product of an MT19937 PRNG seeded with the current time.
 #
+import inspect
+import os
 import random
 import sys
 import time
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.mt19937 import MT19337
 

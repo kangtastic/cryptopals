@@ -23,9 +23,11 @@
 # your mail. Encrypt your password file. Your .sig file. Get a feel for it.
 # I promise, we aren't wasting your time with this.
 #
+import inspect
+import os
 import sys
 
-sys.path.append("..")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.text import repeating_key_xor, to_hexstring
 
