@@ -29,7 +29,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from set3.c19_attack_aes_ctr_fixed_nonce_substitution import guess_keystream
-from util.aes import aes_ctr, make_aes_key
+from util.aes_wrappers import aes_ctr, make_aes_key
 from util.loader import loader
 from util.text import repeating_key_xor
 

@@ -23,7 +23,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import is_aes_ecb
+from util.aes_wrappers import is_aes_ecb
 from util.loader import loader
 
 

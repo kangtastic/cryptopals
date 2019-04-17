@@ -32,7 +32,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_cbc_decrypt
+from util.aes_wrappers import aes_cbc_decrypt
 from util.loader import loader
 
 

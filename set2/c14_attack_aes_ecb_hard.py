@@ -31,7 +31,7 @@ from itertools import islice
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_ecb_encrypt, make_aes_key
+from util.aes_wrappers import aes_ecb_encrypt, make_aes_key
 
 KEY = make_aes_key()
 PREFIX = bytes(random.getrandbits(8) for _ in range(random.randrange(16)))

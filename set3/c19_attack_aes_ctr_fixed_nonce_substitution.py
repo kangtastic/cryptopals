@@ -46,7 +46,7 @@ from itertools import zip_longest
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_ctr, make_aes_key
+from util.aes_wrappers import aes_ctr, make_aes_key
 from util.text import single_byte_xor, repeating_key_xor
 
 KEY = make_aes_key()

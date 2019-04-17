@@ -34,7 +34,7 @@ from string import ascii_letters
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_cbc_encrypt, aes_ecb_encrypt, make_aes_key, is_aes_ecb
+from util.aes_wrappers import aes_cbc_encrypt, aes_ecb_encrypt, make_aes_key, is_aes_ecb
 
 
 def oracle(ptext):
