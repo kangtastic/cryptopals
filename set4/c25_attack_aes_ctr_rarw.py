@@ -35,7 +35,7 @@ from multiprocessing import Pool
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_ctr, aes_ecb_decrypt, make_aes_key
+from util.aes_wrappers import aes_ctr, aes_ecb_decrypt, make_aes_key
 from util.misc import cpu_threads
 from util.loader import loader
 

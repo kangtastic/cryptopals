@@ -40,14 +40,18 @@ import inspect
 import os
 import sys
 
-from Crypto.Util.number import isPrime
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from util.misc import get_prime, invmod
 from util.rsa import make_rsa_keys, rsa
 from util.text import print_indent
 
+HAVE_CRYPTO = False
+try:
+    from Crypto.Util.number import isPrime
+    HAVE_CRYPTO = True
+except ImportError:
+    pass
 
 def _test_invmod():
     tests = [
@@ -57,15 +61,23 @@ def _test_invmod():
         [-486, 217, 121],
         [40, 2018, None],
     ]
-    return all(invmod(a, b) == expected for a, b, expected in tests)
+    if all(invmod(a, b) == expected for a, b, expected in tests):
+        return "Passed."
+    return "Failed."
 
 
 def _test_get_prime(bits=1024, rounds=10):
     for _ in range(rounds):
         prime = get_prime(bits)
-        if prime.bit_length() != bits or not isPrime(prime):
-            return False
-    return True
+        if prime.bit_length() != bits:
+            return "Failed."
+        if HAVE_CRYPTO and not isPrime(prime):
+            return "Failed."
+
+    if HAVE_CRYPTO:
+        return "Passed."
+    else:
+        return "Probably passed; primality check skipped."
 
 
 def _test_rsa():
@@ -86,13 +98,13 @@ def _test_rsa():
     new_ptext = rsa(ctext, pubkey)
     print_indent(new_ptext, as_hex=False)
 
-    return ptext == new_ptext
+    return "Passed." if ptext == new_ptext else "Failed."
 
 
 def main():
     for test in _test_invmod, _test_get_prime, _test_rsa:
         func = test.__name__[6:]
-        print(f"Testing our {func}():", "passed." if test() else "failed.")
+        print(f"Testing our {func}():", test())
 
 
 if __name__ == "__main__":

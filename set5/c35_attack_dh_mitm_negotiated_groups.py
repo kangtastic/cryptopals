@@ -39,7 +39,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
 from set5.c34_attack_dh_mitm_parameter_injection import Host
-from util.aes import aes_cbc_decrypt
+from util.aes_wrappers import aes_cbc_decrypt
 from util.dh import P
 from util.text import englishness
 

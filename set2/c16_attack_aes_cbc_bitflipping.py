@@ -50,7 +50,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_cbc_decrypt, aes_cbc_encrypt, make_aes_key
+from util.aes_wrappers import aes_cbc_decrypt, aes_cbc_encrypt, make_aes_key
 from util.text import repeating_key_xor
 
 # Key and IV are both 128 random bits.

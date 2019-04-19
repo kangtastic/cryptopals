@@ -53,7 +53,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_ecb_encrypt, make_aes_key, is_aes_ecb
+from util.aes_wrappers import aes_ecb_encrypt, make_aes_key, is_aes_ecb
 
 KEY = make_aes_key()
 POSTFIX = base64.b64decode(

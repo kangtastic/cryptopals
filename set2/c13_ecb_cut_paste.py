@@ -54,7 +54,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(inspect.getfile(lambda: 0)))))
 
-from util.aes import aes_ecb_decrypt, aes_ecb_encrypt, make_aes_key
+from util.aes_wrappers import aes_ecb_decrypt, aes_ecb_encrypt, make_aes_key
 from util.text import pad_pkcs7
 
 KEY = make_aes_key()
