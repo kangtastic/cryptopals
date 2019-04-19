@@ -2,7 +2,7 @@
 import os
 import random
 
-from Crypto.Util.number import sieve_base
+from .sieve import sieve_base
 
 
 # Multiprocessing.

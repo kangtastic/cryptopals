@@ -16,17 +16,17 @@ programming challenges, implemented in Python 3.6. I intend to complete Sets 7 a
 
 ## Requirements
 - Python 3.6+
-- [Pycryptodome](https://www.pycryptodome.org/en/latest/)
+- [Pycryptodome](https://www.pycryptodome.org/en/latest/) (optional, but greatly speeds up AES if it's present)
 
 Why 3.6? [f-strings](https://www.python.org/dev/peps/pep-0498/), mostly. Also,
 [ThreadingHTTPServer](https://docs.python.org/3/library/http.server.html#http.server.ThreadingHTTPServer)
-(trivially backported from 3.7) is used once, and maybe some other 3.6+ features are too.
+(trivially backported from 3.7) is used once. Maybe some other 3.6+ features are too, I dunno.
 
 ## Usage
 Each solution is a script that can be run on its own. Any required servers will be started by the
 script.
 
-With the requirements installed, running them for yourself should be something like:
+Running them for yourself should be as easy as running them for yourself:
 ```
     $ ./cxx_script_name.py
     
@@ -34,7 +34,6 @@ With the requirements installed, running them for yourself should be something l
     
     $ python3.6 ./cXX_script_name.py
 ```
-i.e. nothing special.
 
 ## Disclaimers
 Long-term I'd like to work on these, but at the moment:
